@@ -1,6 +1,6 @@
 static class Escape
 {
-public static string[] incognitasSalas{get; private set;}
+public static string[] incognitasSalas {get; private set;}
 public static int estadoJuego{get; private set;}
 
 
