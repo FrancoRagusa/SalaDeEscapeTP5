@@ -30,6 +30,7 @@ public class HomeController : Controller
     }
         public IActionResult Tutotial()
     {
+        ViewBag.NombreJuego = "WolfRoom";
         return View();
     }
         public IActionResult Comenzar()
