@@ -15,12 +15,13 @@ private static void IniciaLizarJuego()
 
 public static int GetEstadoJuego()
 {
+    estadoJuego++;
     return estadoJuego;
 }
 
 public static bool ResolverSala(int Sala, string Incognita)
 {
-    if(incognitasSalas[Sala] == Incognita )
+    if(incognitasSalas[Sala] == Incognita)
     {
         estadoJuego=estadoJuego+1;
         return true;

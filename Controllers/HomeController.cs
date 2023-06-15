@@ -12,33 +12,48 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-        public IActionResult Tutotial()
-    {
-        ViewBag.NombreJuego = "WolfRoom";
-        return View();
-    }
-        public IActionResult Comenzar()
-    {
-        return View();
-    }
-        public IActionResult Habitacion()
-    {
-        return View();
-    }
+ public IActionResult Comenzar()
+{
+    int estadoJuego = Escape.GetEstadoJuego();
+    string Sala = "Habitacion : " + estadoJuego;
+    return View("sala1");
 }
+
+public IActionResult Index()
+{
+    return View();
+}
+
+
+public IActionResult Habitacion(int sala, string clave)
+{
+    int estadoJuego = Escape.GetEstadoJuego();
+
+    bool correcto = Escape.ResolverSala(sala, clave);
+    {
+        if (estadoJuego > 4)
+        {
+            return View("terminado");
+        }
+        string salaProx = "Habitacion : " + estadoJuego;
+        estadoJuego = Escape.GetEstadoJuego();
+        return View("sala1");
+    }
+
+    ViewBag.Error = "Respuesta incorrecta.";
+    return View("Habitacion : " + sala);
+}
+
+public IActionResult Tutorial()
+{
+    return View();
+}
+
+}
+
+
