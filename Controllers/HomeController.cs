@@ -30,8 +30,9 @@ public IActionResult Index()
 }
 
 
-public IActionResult Habitacion(int sala, string clave)
+[HttpPost] public IActionResult Habitacion(string clave, int sala)
 {
+    Escape.InicializarJuego();
     int estadoJuego = Escape.GetEstadoJuego();
 
     bool correcto = Escape.ResolverSala(sala, clave);
@@ -40,16 +41,20 @@ public IActionResult Habitacion(int sala, string clave)
         {
             return View("terminado");
         }
-        string salaProx = "Habitacion : " + estadoJuego;
         estadoJuego = Escape.GetEstadoJuego();
-        return View("sala1");
+        return View();
     }
 
     ViewBag.Error = "Respuesta incorrecta.";
-    return View("Habitacion : " + sala);
+    return View("Habitacion : " + Escape.GetEstadoJuego);
 }
 
 public IActionResult Tutorial()
+{
+    return View();
+}
+
+public IActionResult InicializarJuego()
 {
     return View();
 }
