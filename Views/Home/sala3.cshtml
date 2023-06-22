@@ -2,6 +2,11 @@
 Logras cazar el lobo, con su piel hacerte un abrigo y comer su carne jugosa.
 Ahora con comida y refugio ya empiezas a querer escaparte, pero no sabes para que dirección seguir y te encuentras a … que te ayudara a escapar
 Con un trozo de madera un hombre lo construyo.
-<form method="post" action="Respuesta">
-    Respuesta: <input autocomplete="off" type="text" name="Respuesta" placeholder="Ingrese la respuesta"/><br/>
+<form method="post" action='@Url.Action("Habitacion","Home")'>
+    Respuesta: 
+    <input autocomplete="off" required type="text" name="clave" placeholder="Ingrese la respuesta"/><br/>
+    <input type="hidden" name="Sala" value="3">
+    <button type="submit"></button>
  </form>
+
+ 

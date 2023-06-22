@@ -21,9 +21,13 @@ body {
   margin-bottom: 60px;
 }
 
-img
+h1, h2, h3
 {
-    height: auto;
-    width: 10%;
+  color: aliceblue;
+  text-decoration: underline;
+}
 
+body
+{
+    background-image: url(https://th.bing.com/th/id/R.176246eb08c724eac42709be1553d76d?rik=IjbKkdFfFFipzw&pid=ImgRaw&r=0);
 }

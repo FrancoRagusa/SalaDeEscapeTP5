@@ -1,12 +1,30 @@
 <h1>Sala 1</h1>
-Buen día compañero has aparecido en el bosque luego de haber tenido un accidente, no sabes cómo has llegado,
-pero para salir vas a tener que pasar ciertas instancias y salir antes de que se haga de noche y vengan los animales más salvajes de la zona.
-Encuentras una cueva para refugiarte por un rato, pero hay algo que te impide entrar. Ya se esta haciendo de noche y necesitas refugiarte para no encontrarte
- en una situación de peligro.
- <img src="/img/bosquesin.PNG" width="450" height="450">
- <form method="post" action="views/Home/sala2">
+
+   <h3>Buen día compañero has aparecido en el bosque luego de haber tenido un accidente, no sabes cómo has llegado,
+   pero para salir vas a tener que pasar ciertas instancias y salir antes de que se haga de noche y vengan los animales más salvajes de la zona.
+   Encuentras una cueva para refugiarte por un rato, pero hay algo que te impide entrar. Ya se esta haciendo de noche y necesitas refugiarte para no encontrarte
+   en una situación de peligro.
+   </h3> 
+ 
+
+ <form method="post" action='@Url.Action("Habitacion","Home")'>
     Respuesta: 
-    <input autocomplete="off" type="text" name="clave" placeholder="Ingrese la respuesta"/><br/>
-    <input type="hidden" name="Sala" value="0">
+    <input autocomplete="off" required type="text" name="clave" placeholder="Ingrese la respuesta"/><br/>
+    <input type="hidden" name="Sala" value="1">
     <button type="submit"></button>
  </form>
+
+
+<style>
+
+h1
+{
+   color: aliceblue;
+   
+}
+h3
+{
+   color: aliceblue;
+   border: 6px solid black;
+}
+</style>
