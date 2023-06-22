@@ -2,6 +2,12 @@
     ViewData["Title"] = "Comenzar";
 }
 <h1>@ViewData["Title"]</h1>
-
+                                            
 <h1>Buen día compañero has aparecido en el bosque luego de haber tenido un accidente, no sabes cómo has llegado, pero para salir vas a tener que pasar ciertas instancias y salir antes de que se haga de noche y vengan los animales más salvajes de la zona.</h1>
 <img src="bosquesin.png" alt="">
+ <form method="post" action="views/Home/sala2">
+    Respuesta: 
+    <input autocomplete="off" type="text" name="clave" placeholder="Ingrese la respuesta"/><br/>
+    <input type="hidden" name="Sala" value="0">
+    <button type="submit"></button>
+ </form>

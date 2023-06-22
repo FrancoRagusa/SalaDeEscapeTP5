@@ -17,11 +17,15 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    public IActionResult InicializarJuego()
+{
+    return View();
+}
  public IActionResult Comenzar()
 {
     int estadoJuego = Escape.GetEstadoJuego();
-    string Sala = "Habitacion : " + estadoJuego;
-    return View("sala1");
+    string Sala = "sala" + (estadoJuego+1);
+    return View(Sala);
 }
 
 public IActionResult Index()
@@ -37,28 +41,31 @@ public IActionResult Index()
 
     bool correcto = Escape.ResolverSala(sala, clave);
     {
-        if (estadoJuego > 4)
+        if (!correcto)
         {
-            return View("terminado");
+            ViewBag.paso = "no";
         }
-        estadoJuego = Escape.GetEstadoJuego();
-        return View();
+        else
+        {
+            ViewBag.paso="si";
+        }
+        } 
+        if (Escape.GetEstadoJuego() == 5)
+        {
+        return View("salafinal");
+        
+        }
+        return View("Habitacion " + Escape.GetEstadoJuego());
     }
 
-    ViewBag.Error = "Respuesta incorrecta.";
-    return View("Habitacion : " + Escape.GetEstadoJuego);
-}
+    // ViewBag.Error = "Respuesta incorrecta.";
+    // return View("Habitacion : " + estadoJuego);
+
 
 public IActionResult Tutorial()
 {
-    return View();
-}
-
-public IActionResult InicializarJuego()
-{
-    return View();
+    return View("");
 }
 
 }
-
 

@@ -13,7 +13,6 @@ public static void InicializarJuego()
 
 public static int GetEstadoJuego()
 {
-
     return estadoJuego;
 }
 
